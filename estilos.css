@@ -1,0 +1,125 @@
+/* Custom CSS Variables: Define colores para fácil mantenimiento */
+:root {
+    --primary: #0891b2; /* Azul cian principal */
+    --primary-dark: #0e7490; /* Azul cian oscuro */
+    --secondary: #06b6d4; /* Azul cian secundario */
+    --accent: #f97316; /* Naranja acento */
+    --light: #ecfeff; /* Azul muy claro */
+    --dark: #164e63; /* Azul oscuro */
+}
+
+/* Base Body and Heading Styles: Fuentes y comportamiento de scroll */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Habilita el scroll suave para enlaces ancla */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header Shadow Effect: Sombra para el encabezado fijo */
+.header-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Hover Effects: Animación al pasar el ratón sobre los iconos de redes sociales */
+.social-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Desplazamiento hacia arriba */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Price Card Hover Effects: Animación al pasar el ratón sobre las tarjetas de precios */
+.price-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Primary Button Hover Effects: Animación al pasar el ratón sobre botones primarios */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(110%); /* Ligero aumento de brillo */
+    transform: translateY(-2px); /* Desplazamiento hacia arriba */
+}
+
+/* WhatsApp Button Hover Effects: Animación al pasar el ratón sobre el botón de WhatsApp */
+.whatsapp-btn {
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1); /* Aumento de tamaño */
+}
+
+/* Swiper Carousel Customizations: Estilos para el carrusel de promociones */
+.swiper {
+    width: 100%;
+    padding-bottom: 50px; /* Espacio para los puntos de paginación */
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary); /* Color del punto de paginación activo */
+}
+
+/* Mobile Menu Responsiveness: Controla la visibilidad del menú móvil */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: none; /* Oculto por defecto en móviles */
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Visible cuando la clase 'active' está presente */
+    }
+}
+
+/* Floating Animation for Hero Image: Animación flotante para la imagen principal del Hero */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite; /* Aplica la animación flotante */
+}
+
+/* Water Background and Effect for Hero Section: Estilos para el fondo de agua del Hero */
+.water-bg {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.water-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    /* Considera usar una imagen de fondo local o SVG para evitar dependencias externas */
+    background: url('https://cdn.pixabay.com/photo/2017/08/01/01/33/blue-2562573_1280.jpg');
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
