@@ -1,11 +1,11 @@
 /* Custom CSS Variables: Define colores para fácil mantenimiento */
 :root {
-    --primary: #0891b2; /* Azul cian principal */
-    --primary-dark: #0e7490; /* Azul cian oscuro */
-    --secondary: #06b6d4; /* Azul cian secundario */
-    --accent: #f97316; /* Naranja acento */
+    --primary: #0891b2; /* Azul cian principal (similar al logo) */
+    --primary-dark: #0e7490; /* Azul cian oscuro (similar al logo) */
+    --secondary: #06b6d4; /* Azul cian secundario (similar al logo) */
+    --accent: #FFD700; /* Amarillo vibrante para el acento (¡Basado en el sol del logo!) */
     --light: #ecfeff; /* Azul muy claro */
-    --dark: #164e63; /* Azul oscuro */
+    --dark: #164e63; /* Azul oscuro (similar al logo) */
 }
 
 /* Base Body and Heading Styles: Fuentes y comportamiento de scroll */
@@ -22,6 +22,14 @@ h1, h2, h3, h4, h5, h6 {
 .header-shadow {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilos para la barra de navegación cuando se hace scroll */
+.header-scrolled {
+    padding-top: 8px; /* Reduce el padding superior */
+    padding-bottom: 8px; /* Reduce el padding inferior */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Sombra más sutil al hacer scroll */
+}
+
 
 /* Social Icon Hover Effects: Animación al pasar el ratón sobre los iconos de redes sociales */
 .social-icon {
@@ -82,10 +90,24 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .mobile-menu {
         display: none; /* Oculto por defecto en móviles */
+        flex-direction: column; /* Asegura que los enlaces se apilen */
+        position: absolute; /* Posiciona el menú sobre el contenido */
+        top: 100%; /* Debajo de la barra de navegación */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 40; /* Asegura que esté por encima de otros elementos */
+        transform: translateY(-100%); /* Oculto hacia arriba */
+        transition: transform 0.3s ease-out; /* Animación de deslizamiento */
     }
 
-    .mobile-menu.active {
-        display: flex; /* Visible cuando la clase 'active' está presente */
+    .mobile-menu.flex { /* Usa 'flex' para mostrarlo, no 'active' */
+        transform: translateY(0); /* Desliza hacia abajo para mostrar */
+    }
+
+    .mobile-menu a {
+        padding: 12px 16px; /* Ajusta el padding de los enlaces del menú móvil */
+        text-align: center;
     }
 }
 
@@ -108,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Water Background and Effect for Hero Section: Estilos para el fondo de agua del Hero */
 .water-bg {
-    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 }
 
 .water-effect {
@@ -117,8 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 15px;
-    /* Considera usar una imagen de fondo local o SVG para evitar dependencias externas */
-    background: url('https://cdn.pixabay.com/photo/2017/08/01/01/33/blue-2562573_1280.jpg');
+    background: url('https://cdn.pixabay.com/photo/2017/08/01/01/33/blue-2562573_1280.jpg'); /* Considera usar una imagen de fondo local o SVG para evitar dependencias externas */
     background-size: cover;
     opacity: 0.5;
     z-index: -1;
