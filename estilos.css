@@ -3,7 +3,7 @@
     --primary: #0891b2; /* Azul cian principal (similar al logo) */
     --primary-dark: #0e7490; /* Azul cian oscuro (similar al logo) */
     --secondary: #06b6d4; /* Azul cian secundario (similar al logo) */
-    --accent: #FFD700; /* Amarillo vibrante para el acento (¡Basado en el sol del logo!) */
+    --accent: #FFD700; /* Amarillo vibrante para el acento (Basado en el sol del logo) */
     --light: #ecfeff; /* Azul muy claro */
     --dark: #164e63; /* Azul oscuro (similar al logo) */
 }
@@ -24,12 +24,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Estilos para la barra de navegación cuando se hace scroll */
+/* Esta clase se añade/elimina con JavaScript para el efecto de encogimiento */
 .header-scrolled {
     padding-top: 8px; /* Reduce el padding superior */
     padding-bottom: 8px; /* Reduce el padding inferior */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Sombra más sutil al hacer scroll */
 }
-
 
 /* Social Icon Hover Effects: Animación al pasar el ratón sobre los iconos de redes sociales */
 .social-icon {
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
 
-/* Price Card Hover Effects: Animación al pasar el ratón sobre las tarjetas de precios */
+/* Price Card Hover Effects: Animación al pasar el ratón sobre las tarjetas de precios y menú */
 .price-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -86,28 +86,32 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary); /* Color del punto de paginación activo */
 }
 
-/* Mobile Menu Responsiveness: Controla la visibilidad del menú móvil */
+/* Mobile Menu Responsiveness: Controla la visibilidad y animación del menú móvil */
 @media (max-width: 768px) {
     .mobile-menu {
+        /* Por defecto, el menú está oculto y posicionado fuera de la vista */
         display: none; /* Oculto por defecto en móviles */
-        flex-direction: column; /* Asegura que los enlaces se apilen */
+        flex-direction: column; /* Asegura que los enlaces se apilen verticalmente */
         position: absolute; /* Posiciona el menú sobre el contenido */
-        top: 100%; /* Debajo de la barra de navegación */
+        top: 100%; /* Inicia justo debajo de la barra de navegación */
         left: 0;
         width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white; /* Fondo blanco para el menú */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
         z-index: 40; /* Asegura que esté por encima de otros elementos */
-        transform: translateY(-100%); /* Oculto hacia arriba */
-        transition: transform 0.3s ease-out; /* Animación de deslizamiento */
+        transform: translateY(-100%); /* Oculto hacia arriba, fuera de la pantalla */
+        transition: transform 0.3s ease-out; /* Animación de deslizamiento suave */
     }
 
-    .mobile-menu.flex { /* Usa 'flex' para mostrarlo, no 'active' */
-        transform: translateY(0); /* Desliza hacia abajo para mostrar */
+    /* Cuando JavaScript añade la clase 'flex' (o 'mobile-menu-open'), el menú se muestra */
+    .mobile-menu.flex {
+        display: flex !important; /* ¡IMPORTANTE! Sobrescribe 'display: none' de Tailwind */
+        transform: translateY(0); /* Desliza hacia abajo para mostrar el menú */
     }
 
     .mobile-menu a {
         padding: 12px 16px; /* Ajusta el padding de los enlaces del menú móvil */
-        text-align: center;
+        text-align: center; /* Centra el texto de los enlaces */
     }
 }
 
@@ -139,7 +143,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 15px;
-    background: url('https://cdn.pixabay.com/photo/2017/08/01/01/33/blue-2562573_1280.jpg'); /* Considera usar una imagen de fondo local o SVG para evitar dependencias externas */
+    /* Considera usar una imagen de fondo local o SVG para evitar dependencias externas */
+    background: url('https://cdn.pixabay.com/photo/2017/08/01/01/33/blue-2562573_1280.jpg');
     background-size: cover;
     opacity: 0.5;
     z-index: -1;

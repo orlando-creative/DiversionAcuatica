@@ -2,17 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para asegurar la responsividad en todos los dispositivos -->
     <title>Diversion Acuatica - Diversión y Frescura</title>
+    <!-- Carga de Tailwind CSS desde CDN. Nota: Para producción, se recomienda instalarlo como plugin PostCSS. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Carga de Swiper CSS para el carrusel de promociones -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Carga de fuentes personalizadas (Montserrat y Poppins) desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace a tu archivo CSS personalizado para estilos adicionales -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="bg-sky-50">
+    <!-- Sección del encabezado y la barra de navegación -->
     <header id="navbar" class="fixed top-0 left-0 right-0 bg-white header-shadow z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo y nombre del sitio -->
             <a href="#" class="flex items-center">
                 <img src="img/logo.png" alt="Logo Diversion Acuatica" class="h-10 w-auto">
                 <span class="text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent ml-2">
@@ -20,6 +27,7 @@
                 </span>
             </a>
 
+            <!-- Navegación principal para pantallas grandes (desktop) -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#social" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Redes Sociales</a>
                 <a href="#precios" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Precios</a>
@@ -28,6 +36,7 @@
                 <a href="#contacto" class="px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full font-medium hover:shadow-lg transition-all">Contacto</a>
             </nav>
 
+            <!-- Botón del menú móvil para pantallas pequeñas -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-700 hover:text-cyan-600">
                     <i class="fas fa-bars text-2xl"></i>
@@ -35,7 +44,8 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="mobile-menu flex-col w-full bg-white pb-4 px-4 md:hidden">
+        <!-- Menú móvil (oculto por defecto, visible con JavaScript) -->
+        <div id="mobile-menu" class="mobile-menu hidden flex-col w-full bg-white pb-4 px-4 md:hidden">
             <a href="#social" class="py-3 text-gray-700 hover:text-cyan-600 font-medium border-b border-gray-100">Redes Sociales</a>
             <a href="#precios" class="py-3 text-gray-700 hover:text-cyan-600 font-medium border-b border-gray-100">Precios</a>
             <a href="#promociones" class="py-3 text-gray-700 hover:text-cyan-600 font-medium border-b border-gray-100">Atracciones</a>
@@ -44,6 +54,7 @@
         </div>
     </header>
 
+    <!-- Sección Hero (principal) -->
     <section class="relative pt-28 pb-16 md:pt-32 md:pb-24 px-4 water-bg">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-1/2 text-center md:text-left text-white mb-8 md:mb-0">
@@ -61,31 +72,33 @@
         <div class="water-effect"></div>
     </section>
 
+    <!-- Sección de Redes Sociales -->
     <section id="social" class="py-16 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Síguenos en redes sociales</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Enlace a Facebook -->
                 <a href="https://www.facebook.com/people/Piscina-Diversi%25C3%25B3n-Acuatica/100064127641676/" target="_blank" rel="noopener noreferrer" class="social-icon flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl">
                     <div class="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center mb-4">
                         <i class="fab fa-facebook-f text-4xl text-white"></i>
                     </div>
                     <span class="text-gray-700 font-medium">Facebook</span>
                 </a>
-
+                <!-- Enlace a Instagram (reemplazar TU_PERFIL_INSTAGRAM) -->
                 <a href="https://www.instagram.com/TU_PERFIL_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="social-icon flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl">
                     <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-500 flex items-center justify-center mb-4">
                         <i class="fab fa-instagram text-4xl text-white"></i>
                     </div>
                     <span class="text-gray-700 font-medium">Instagram</span>
                 </a>
-
+                <!-- Enlace a TikTok -->
                 <a href="https://www.tiktok.com/@diversion_acuatica?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="social-icon flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl">
                     <div class="w-20 h-20 rounded-full bg-black flex items-center justify-center mb-4">
                         <i class="fab fa-tiktok text-4xl text-white"></i>
                     </div>
                     <span class="text-gray-700 font-medium">TikTok</span>
                 </a>
-
+                <!-- Enlace a YouTube (reemplazar TU_CANAL_YOUTUBE) -->
                 <a href="https://www.youtube.com/channel/TU_CANAL_YOUTUBE" target="_blank" rel="noopener noreferrer" class="social-icon flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl">
                     <div class="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center mb-4">
                         <i class="fab fa-youtube text-4xl text-white"></i>
@@ -96,17 +109,19 @@
         </div>
     </section>
 
+    <!-- Sección de Precios -->
     <section id="precios" class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Precios</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Tarjeta de Precios para Mayores -->
                 <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden">
                     <div class="bg-cyan-500 py-6 px-6 text-white text-center">
                         <h3 class="text-2xl font-bold">Mayores</h3>
                     </div>
                     <div class="p-6">
                         <div class="text-center mb-6">
-                            <span class="text-4xl font-bold text-gray-800">20 Bs.</span>
+                            <span class="text-4xl font-bold text-gray-800">10 Bs.</span>
                             <span class="text-gray-600 ml-2">/ persona</span>
                         </div>
                         <ul class="space-y-3 mb-6">
@@ -127,17 +142,19 @@
                                 <span>Válido por 1 día</span>
                             </li>
                         </ul>
+                        <!-- Botón de WhatsApp para reservar entrada de Mayores -->
                         <a href="https://wa.me/59173632226?text=¡Hola! Quisiera reservar entrada para *MAYORES*. ¿Cuál es la disponibilidad?" target="_blank" rel="noopener noreferrer" class="block w-full py-3 bg-cyan-500 text-white text-center rounded-lg font-medium hover:bg-cyan-600 transition-colors">Reservar Ahora</a>
                     </div>
                 </div>
 
+                <!-- Tarjeta de Precios para Niños -->
                 <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden">
                     <div class="bg-gradient-to-r from-cyan-500 to-blue-600 py-6 px-6 text-white text-center">
                         <h3 class="text-2xl font-bold">Niños</h3>
                     </div>
                     <div class="p-6">
                         <div class="text-center mb-6">
-                            <span class="text-4xl font-bold text-gray-800">10 Bs.</span>
+                            <span class="text-4xl font-bold text-gray-800">20 Bs.</span>
                             <span class="text-gray-600 ml-2">/ persona</span>
                         </div>
                         <ul class="space-y-3 mb-6">
@@ -158,6 +175,7 @@
                                 <span>Válido por 1 día</span>
                             </li>
                         </ul>
+                        <!-- Botón de WhatsApp para reservar entrada de Niños -->
                         <a href="https://wa.me/59173632226?text=¡Hola! Quisiera reservar entrada para *NIÑOS*. ¿Cuál es la disponibilidad?" target="_blank" rel="noopener noreferrer" class="block w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center rounded-lg font-medium hover:shadow-lg transition-all">Reservar Ahora</a>
                     </div>
                 </div>
@@ -165,12 +183,14 @@
         </div>
     </section>
 
+    <!-- Sección de Atracciones del Lugar (anteriormente Promociones) -->
     <section id="promociones" class="py-16 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Atracciones del Lugar</h2>
 
             <div class="swiper promociones-swiper max-w-5xl mx-auto">
                 <div class="swiper-wrapper">
+                    <!-- Slide para Cancha de Vóley y Fútbol -->
                     <div class="swiper-slide">
                         <div class="bg-gradient-to-br from-sky-400 to-cyan-600 rounded-2xl p-8 text-white shadow-lg">
                             <div class="flex flex-col md:flex-row items-center">
@@ -178,6 +198,7 @@
                                     <div class="inline-block bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">¡Diversión en Grupo!</div>
                                     <h3 class="text-3xl font-bold mb-3">Cancha de Vóley y Fútbol</h3>
                                     <p class="mb-6">Disfruta de nuestras canchas deportivas para un partido emocionante con amigos y familia. ¡Pregunta por la disponibilidad!</p>
+                                    <!-- Botón de WhatsApp para consultar sobre la cancha -->
                                     <a href="https://wa.me/59173632226?text=¡Hola! Quisiera consultar sobre la disponibilidad y tarifas de la *cancha de vóley/fútbol*." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-white text-cyan-600 rounded-full font-semibold hover:bg-gray-100 transition-colors">¡Consultar!</a>
                                 </div>
                                 <div class="md:w-1/3">
@@ -187,6 +208,7 @@
                         </div>
                     </div>
 
+                    <!-- Slide para Sauna a Vapor y Zona de Relax -->
                     <div class="swiper-slide">
                         <div class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl p-8 text-white shadow-lg">
                             <div class="flex flex-col md:flex-row items-center">
@@ -194,6 +216,7 @@
                                     <div class="inline-block bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">Relajación Total</div>
                                     <h3 class="text-3xl font-bold mb-3">Sauna a Vapor y Zona de Relax</h3>
                                     <p class="mb-6">Complementa tu día de diversión con una sesión relajante en nuestro sauna a vapor. Un espacio ideal para desconectar.</p>
+                                    <!-- Botón de WhatsApp para consultar sobre el sauna -->
                                     <a href="https://wa.me/59173632226?text=¡Hola! Quisiera consultar sobre el uso y tarifas del *sauna a vapor y la zona de relax*." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-100 transition-colors">¡Consultar!</a>
                                 </div>
                                 <div class="md:w-1/3">
@@ -204,27 +227,32 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div> <!-- Paginación del carrusel -->
             </div>
         </div>
     </section>
 
+    <!-- Sección de Menú Especial Dominical -->
     <section id="menu-especial" class="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Menú Especial Dominical</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Todos los domingos disfruta de nuestra deliciosa selección de comida tradicional cochabambina mientras te refrescas en nuestras instalaciones.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Plato: Sopa de Maní -->
+                <!-- data-dish-name y data-dish-price son atributos personalizados para que JavaScript pueda leer la información del plato -->
                 <div class="menu-item price-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-dish-name="Sopa de Maní" data-dish-price="30">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Sopa+de+Man%C3%AD" alt="Sopa de Maní" class="w-full h-full object-cover transition-transform hover:scale-105">
+                        <!-- Reemplaza esta URL con la ruta a tu imagen real de la Sopa de Maní -->
+                        <img src="https://placehold.co/400x250/FFD700/FFFFFF?text=Sopa+de+Man%C3%AD" alt="Sopa de Maní" class="w-full h-full object-cover transition-transform hover:scale-105">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Sopa de Maní</h3>
                         <p class="text-gray-600 mb-4">Cremosa y reconfortante sopa tradicional boliviana.</p>
                         <div class="flex flex-col sm:flex-row justify-between items-center">
-                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">7 Bs.</span>
+                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">30 Bs.</span>
                             <div class="flex items-center">
+                                <!-- Input para la cantidad del plato -->
                                 <input type="number" min="0" value="0" class="dish-quantity w-20 px-3 py-2 border border-gray-300 rounded-lg text-center mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Cantidad">
                                 <button class="add-to-cart-btn px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-medium hover:shadow-md transition-all">Agregar</button>
                             </div>
@@ -232,15 +260,17 @@
                     </div>
                 </div>
 
+                <!-- Plato: Pique Macho -->
                 <div class="menu-item price-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-dish-name="Pique Macho" data-dish-price="70">
                     <div class="h-48 overflow-hidden">
-                        <img src="img/pique.jpg" alt="Pique Macho" class="w-full h-full object-cover transition-transform hover:scale-105">
+                        <!-- Reemplaza esta URL con la ruta a tu imagen real del Pique Macho -->
+                        <img src="https://placehold.co/400x250/007bff/FFFFFF?text=Pique+Macho" alt="Pique Macho" class="w-full h-full object-cover transition-transform hover:scale-105">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Pique Macho</h3>
                         <p class="text-gray-600 mb-4">Abundante plato con carne, salchichas, papas y vegetales.</p>
                         <div class="flex flex-col sm:flex-row justify-between items-center">
-                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">60 Bs.</span>
+                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">70 Bs.</span>
                             <div class="flex items-center">
                                 <input type="number" min="0" value="0" class="dish-quantity w-20 px-3 py-2 border border-gray-300 rounded-lg text-center mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Cantidad">
                                 <button class="add-to-cart-btn px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-medium hover:shadow-md transition-all">Agregar</button>
@@ -249,9 +279,11 @@
                     </div>
                 </div>
 
+                <!-- Plato: Chicharrón -->
                 <div class="menu-item price-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-dish-name="Chicharrón" data-dish-price="60">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://via.placeholder.com/400x250/8B4513/FFFFFF?text=Chicharr%C3%B3n" alt="Chicharrón" class="w-full h-full object-cover transition-transform hover:scale-105">
+                        <!-- Reemplaza esta URL con la ruta a tu imagen real del Chicharrón -->
+                        <img src="https://placehold.co/400x250/8B4513/FFFFFF?text=Chicharr%C3%B3n" alt="Chicharrón" class="w-full h-full object-cover transition-transform hover:scale-105">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Chicharrón</h3>
@@ -266,15 +298,17 @@
                     </div>
                 </div>
 
+                <!-- Plato: Charque -->
                 <div class="menu-item price-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-dish-name="Charque" data-dish-price="55">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://via.placeholder.com/400x250/A0522D/FFFFFF?text=Charque" alt="Charque" class="w-full h-full object-cover transition-transform hover:scale-105">
+                        <!-- Reemplaza esta URL con la ruta a tu imagen real del Charque -->
+                        <img src="https://placehold.co/400x250/A0522D/FFFFFF?text=Charque" alt="Charque" class="w-full h-full object-cover transition-transform hover:scale-105">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Charque</h3>
-                        <p class="text-gray-600 mb-4">Carne seca desmenuzada, servida con mote y papa.</p>
+                        <p class="text-gray-600 mb-4">Carne seca desmenuzada, servida con choclo y papa.</p>
                         <div class="flex flex-col sm:flex-row justify-between items-center">
-                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">60 Bs.</span>
+                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">55 Bs.</span>
                             <div class="flex items-center">
                                 <input type="number" min="0" value="0" class="dish-quantity w-20 px-3 py-2 border border-gray-300 rounded-lg text-center mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Cantidad">
                                 <button class="add-to-cart-btn px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-medium hover:shadow-md transition-all">Agregar</button>
@@ -283,15 +317,17 @@
                     </div>
                 </div>
 
+                <!-- Plato: Pato -->
                 <div class="menu-item price-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-dish-name="Pato a la Naranja" data-dish-price="65">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://via.placeholder.com/400x250/6B8E23/FFFFFF?text=Pato" alt="Pato" class="w-full h-full object-cover transition-transform hover:scale-105">
+                        <!-- Reemplaza esta URL con la ruta a tu imagen real del Pato -->
+                        <img src="https://placehold.co/400x250/6B8E23/FFFFFF?text=Pato" alt="Pato" class="w-full h-full object-cover transition-transform hover:scale-105">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Pato Frito</h3>
-                        <p class="text-gray-600 mb-4">Jugoso pato con arroz,papa,macarron y chuño con su ensalada.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Pato a la Naranja</h3>
+                        <p class="text-gray-600 mb-4">Jugoso pato con un toque cítrico y exótico.</p>
                         <div class="flex flex-col sm:flex-row justify-between items-center">
-                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">150 Bs.</span>
+                            <span class="text-2xl font-bold text-cyan-600 mb-2 sm:mb-0">65 Bs.</span>
                             <div class="flex items-center">
                                 <input type="number" min="0" value="0" class="dish-quantity w-20 px-3 py-2 border border-gray-300 rounded-lg text-center mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Cantidad">
                                 <button class="add-to-cart-btn px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-medium hover:shadow-md transition-all">Agregar</button>
@@ -301,6 +337,7 @@
                 </div>
             </div>
 
+            <!-- Botón para ver el pedido y reservar (WhatsApp) -->
             <div class="mt-12 text-center">
                 <button id="view-order-btn" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full font-medium hover:shadow-lg transition-all">
                     <i class="fas fa-shopping-cart mr-2"></i> Ver mi Pedido y Reservar
@@ -309,22 +346,27 @@
         </div>
     </section>
 
+    <!-- Sección de Contacto -->
     <section id="contacto" class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Contáctanos</h2>
 
+            <!-- Mapa de Google Maps (reemplazar src con tu URL de incrustación real) -->
             <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15191.748270148606!2d-63.12075625!3d-17.84158485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e90352f53eed%3A0x408ec3b9f15b40f6!2sPiscina%20diversi%C3%B3n%20acu%C3%A1tica!5e0!3m2!1ses-419!2sbo!4v1752018260933!5m2!1ses-419!2sbo" 
-                width="100%" 
-                height="400" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1916.6433364407982!2d-63.17886475736173!3d-17.77660232490532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e78453a25d2b%3A0x633d3c7e3f8b0307!2sBarrio%20Suarez%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1sen!2sus!4v1707964800000!5m2!1sen!2us"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Información de Contacto -->
                     <div class="p-8 md:p-12 bg-gradient-to-br from-cyan-500 to-blue-600 text-white">
                         <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
                         <div class="space-y-4 mb-8">
@@ -348,7 +390,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Iconos de Redes Sociales en Contacto (reemplazar URLs) -->
                         <div class="flex space-x-4">
                             <a href="https://www.facebook.com/people/Piscina-Diversi%25C3%25B3n-Acuatica/100064127641676/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white text-cyan-500 flex items-center justify-center hover:bg-gray-100 transition-colors">
                                 <i class="fab fa-facebook-f"></i>
@@ -365,6 +407,7 @@
                         </div>
                     </div>
 
+                    <!-- Formulario de Contacto -->
                     <div class="p-8 md:p-12">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Envíanos un mensaje</h3>
                         <form>
@@ -393,10 +436,12 @@
         </div>
     </section>
 
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/59173632226" target="_blank" rel="noopener noreferrer" class="whatsapp-btn fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg z-50 hover:scale-110 transition-transform">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
+    <!-- Sección del pie de página -->
     <footer class="bg-gray-800 text-white py-12 px-4">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -405,6 +450,7 @@
                         <i class="fas fa-water mr-2"></i>Diversion Acuatica
                     </h3>
                     <p class="text-gray-300 mb-4">El mejor lugar para refrescarte y divertirte. Contamos con instalaciones modernas y seguras para toda la familia.</p>
+                    <!-- Iconos de Redes Sociales en Footer (reemplazar URLs) -->
                     <div class="flex space-x-3">
                         <a href="https://www.facebook.com/people/Piscina-Diversi%25C3%25B3n-Acuatica/100064127641676/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-colors">
                             <i class="fab fa-facebook-f"></i>
@@ -473,7 +519,10 @@
         </div>
     </footer>
 
+    <!-- Carga de Swiper JS (debe ser antes de tu codigo.js si lo usas en el) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Carga de tu archivo JavaScript personalizado -->
     <script src="codigo.js"></script>
 </body>
 </html>
+0
